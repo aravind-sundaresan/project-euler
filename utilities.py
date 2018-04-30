@@ -26,6 +26,9 @@ def compute_factorial(num):
 
 def prime_number_check(num):
 
+	if num == 0 or num == 1:
+		return 0
+
 	for i in range(2, (num // 2 + 1)):
 		if num % i == 0:
 			return 0
@@ -45,5 +48,16 @@ def find_factors(num):
 
 	return factors
 
+def digit_count(num):
+
+	count = 0
+
+	while num > 0:
+		count += 1
+		num = num // 10
+
+	return count
+
+
 if __name__ == '__main__':
-	main()
+	print(prime_number_check(1))
