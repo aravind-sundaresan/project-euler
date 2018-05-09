@@ -5,16 +5,12 @@ def depth_first_search(graph, source):
 	visited, stack = [], [source]
 
 	while stack:
-		print(stack)
 		vertex = stack.pop()
-
-		if vertex in visited:
-			continue
-		
 		visited.append(vertex)
 
 		for neighbour in graph[vertex]:
-			stack.append(neighbour)
+			if neighbour not in visited:	
+				stack.append(neighbour)
 						
 	print(visited)
 
@@ -28,12 +24,13 @@ if __name__ == '__main__':
 	# Creating the graph
 	graph = collections.defaultdict(list)
 	graph = add_edge(graph, 1, 0)
-	graph = add_edge(graph, 0, 2)
 	graph = add_edge(graph, 2, 1)
 	graph = add_edge(graph, 0, 3)
+	graph = add_edge(graph, 0, 2)
 	graph = add_edge(graph, 3, 4)
 	graph = add_edge(graph, 4, 0)
 
+	#print(graph)
 	#graph = {1: [2, 3], 2: [4, 5], 3: [5], 4: [6], 5: [6], 6: [7], 7: []}
 	#graph = {0: [1, 3, 2], 1: [4, 6], 2: [3, 5], 3: [4], 4: [], 5: [], 6: []}
 	depth_first_search(graph, 0)
