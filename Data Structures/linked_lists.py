@@ -13,7 +13,7 @@ class Node:
 	def setData(self, newdata):
 		self.data = newdata
 
-	def setNext(sef, newnext):
+	def setNext(self, newnext):
 		self.next = newnext
 
 class UnorderedList:
@@ -39,6 +39,55 @@ class UnorderedList:
 
 		return count
 
+	def search(self, item):
+		current = self.head
+		count = 0
+
+		while current != None:
+			if current.getData() == item:
+				print("Found")
+				return count
+
+			count += 1
+			current = current.getNext()
+
+	def traverse(self):
+		current = self.head
+
+		while current != None:
+			print(current.getData())
+			current = current.getNext()
+
+	def remove(self, item):
+		current = self.head
+		previous = None
+
+		while current != None:
+			if current.getData() == item:
+
+				if previous == None:
+					self.head = current.getNext()
+
+				else:
+					previous.setNext(current.getNext())
+
+			previous = current
+			current = current.getNext()
+
+
 if __name__ == '__main__':
-	node = Node(12)
-	print(node.getData())
+	
+	mylist = UnorderedList()
+
+	mylist.add(20)
+	mylist.add(31)
+	mylist.add(10)
+	mylist.add(26)
+
+	#print(mylist.size())
+	mylist.traverse()
+
+	item = 10
+	mylist.remove(item)
+	print("List after removing " + str(item) + ":")
+	mylist.traverse()
