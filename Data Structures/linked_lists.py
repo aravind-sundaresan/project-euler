@@ -65,6 +65,7 @@ class UnorderedList:
 		while current != None:
 			if current.getData() == item:
 
+				# Check if the first item was removed
 				if previous == None:
 					self.head = current.getNext()
 
