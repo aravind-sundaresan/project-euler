@@ -1,4 +1,6 @@
+# Question: Find all Pairs Of Integers in an Array whose Sum is a Given Number
 
+Read more: https://javarevisited.blogspot.com/2014/08/how-to-find-all-pairs-in-array-of-integers-whose-sum-equal-given-number-java.html#ixzz5HeNYXA1a
 def integer_pair_sum(array, sum):
 
 	dict = {}
