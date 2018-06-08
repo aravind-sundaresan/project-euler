@@ -1,3 +1,4 @@
+# Question: How to remove duplicate characters from a String (maintain the order of characters)?
 
 def remove_duplicates(input_string):
 
